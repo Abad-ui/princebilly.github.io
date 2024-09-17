@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>,y Port</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+     <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                
+                    <div class="logo-text"></div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                  <ul class="navlinks">
+                        <li><a href="main.html"><strong>HOME</strong></a></li>
+                        <li><a href="aboutme.html"><strong>ABOUT ME</strong></a></li>
+                        <li><a href="picturesofme.html"><strong>PICTURES OF ME</strong></a></li>
+                    </ul> 
+                </nav>
+            </header>
+            <div class="container">
+                 <div class="hero-pic">
+                    <img src="images/facecard.jfif" alt="">
+                 </div>
+                 <div class="hero-text">
+                    <h5>Hi I'm <span class="input">from 9 - Becquerel</span></h5>
+                    <h1>Prince Billy N. Abad</h1>
+                    
+
+                   
+
+                    <div class="social">
+                        <a href="https://www.facebook.com/billy.prince.52459"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/illybad_?igsh=czNieXloM2U2ZjY4&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     </div>
+     <!---typed js for typing text effect-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+     <script>
+        /** creating button click show hide navbar **/
+        var togglebtn=document.querySelector(".togglebtn");
+        var nav=document.querySelector(".navlinks");
+        var links=document.querySelector(".navlinks li");
+
+        togglebtn.addEventListener("click", function(){
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+
+        var typed=new Typed(".input",{
+            strings:["from 9 - Becquerel"],
+            typedSpeed:1,
+            backSpeed:80,
+            loop:true
+        })
+     </script>
+
+    <script>
+        // Function to set the active class on the current page link
+        function setActiveLink() {
+            var currentPage = window.location.pathname.split("/").pop();
+            var navLinks = document.querySelectorAll(".navlinks a");
+
+            navLinks.forEach(function(link) {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        // Call the function to set the active link when the page loads
+        window.onload = setActiveLink;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="aboutme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <div class="logo-text">ABOUT ME</div>
+                </div>
+                <nav>
+                    <ul class="navlinks">
+                        <li><a href="main.html"><strong>HOME</strong></a></li>
+                        <li><a href="aboutme.html" class="active"><strong>ABOUT ME</strong></a></li>
+                        <li><a href="picturesofme.html"><strong>PICTURES OF ME</strong></a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- Personal Details Section -->
+            <section class="personal-details">
+                <div class="details-container">
+                    <div class="details-column">
+                        <h2>Family</h2>
+                        <p>Anthony Abad - Father <img src="images/dadpic.png" width="50px", height="50px"></p>
+                        <p>Marilyn Abad - Mother <img src="images/mompic.png" width="50px", height="50px"></p>
+                        <p>Paul Brian Abad - Brother  <img src="images/boypic.png" width="50px", height="50px"></p>
+                        <p>Precious Bea Abad - Sister  <img src="images/sispic.png" width="50px", height="50px"></p>
+                    </div>
+                    <div class="details-column">
+                        <h2>Favorites</h2>
+                        <p>Food: Adobo</p>
+                        <p>Music: Here I am</p>
+                        <p>Subject: Math</p>
+                        <p>Drinks: Water</p>
+                        <p>Verse: Jeremiah 29:11</p>
+                        <p>Movies: High School Musical</p>
+                        <p>Books: Harry Potter</p>
+                        <p>Color: Blue</p>
+                        <p>Memory: Winning my first math contest</p>
+                    </div>
+                    <div class="details-column">
+                        <h2>Sports & Hobbies</h2>
+                        <p>Sports: Basketball    <img src="images/basketballpic.png" width="50px", height="50px"></p>
+                        <p>Hobby: Playing Guitar    <img src="images/guitarpic.png" width="50px", height="50px"></p>
+                        <p>Talents: Singing    <img src="images/singingpic.png" width="50px", height="50px"></p>
+                    </div>
+                    <div class="details-column">
+                        <h2>Additional Information</h2>
+                        <p><strong>Social Media Accounts:</strong> FB: Prince Billy Abad, IG: @illybad_</p>
+                        <p><strong>Religion:</strong> Born Again Christian</p>
+                        <p><strong>Inspiration:</strong> My Family</p>
+                        <p><strong>Achievements:</strong> Champion Singing Contest, Bronze Awardee Math Olympiad</p>
+                        <p><strong>Places You Want to Travel:</strong> Japan</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Typed.js for typing text effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        // Creating button click show hide navbar
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+
+        togglebtn.addEventListener("click", function() {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        });
+
+        // Function to set the active class on the current page link
+        function setActiveLink() {
+            var currentPage = window.location.pathname.split("/").pop();
+            var navLinks = document.querySelectorAll(".navlinks a");
+
+            navLinks.forEach(function(link) {
+                // Remove 'active' class from all links
+                link.classList.remove("active");
+                // Add 'active' class to the link matching the current page
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        // Call the function to set the active link when the page loads
+        window.onload = setActiveLink;
+    </script>
+</body>
+</html>
